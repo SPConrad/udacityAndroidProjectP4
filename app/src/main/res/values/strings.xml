@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">UdacityP4ProjectMusicPlayer</string>
+    <string name="song0">Song 1</string>
+    <string name="song1">Song 2</string>
+    <string name="song2">Song 3</string>
+    <string name="song3">Song 4</string>
+    <string name="song4">Song 5</string>
+    <string name="song5">Song 6</string>
+    <string name="song6">Song 7</string>
+    <string name="song7">Song 8</string>
+    <string name="song8">Song 9</string>
+    <string name="song9">Song 10</string>
+    <string name="song10">Song 11</string>
+    <string name="song11">Song 12</string>
+    <string name="song12">Song 13</string>
+    <string name="song13">Song 14</string>
+    <string name="song14">Song 15</string>
+    <string name="song15">Song 16</string>
+    <string name="song16">Song 17</string>
+    <string name="song17">Song 18</string>
+    <string name="song18">Song 19</string>
+</resources>
