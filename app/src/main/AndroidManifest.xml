@@ -20,6 +20,11 @@
             android:label="Song List"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity
+            android:name=".PodcastsActivity"
+            android:label="Podcasts"
+            android:parentActivityName=".MainActivity">
+        </activity>
     </application>
 
 </manifest>

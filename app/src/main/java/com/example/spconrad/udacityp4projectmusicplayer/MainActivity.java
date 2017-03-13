@@ -16,12 +16,24 @@ public class MainActivity extends AppCompatActivity {
 
         TextView songsTextView = (TextView) findViewById(R.id.songs_activity_select_button);
 
+        TextView podcastsTextView = (TextView) findViewById(R.id.podcasts_activity_select_button);
+
         songsTextView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent songsActivityIntent = new Intent(MainActivity.this, SongListActivity.class);
 
                 startActivity(songsActivityIntent);
+                //finish();
+            }
+        });
+
+        podcastsTextView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent podcastsActivityIntent = new Intent(MainActivity.this, PodcastsActivity.class);
+
+                startActivity(podcastsActivityIntent);
                 //finish();
             }
         });

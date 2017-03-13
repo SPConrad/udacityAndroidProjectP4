@@ -24,6 +24,12 @@
         android:clickable="true"/>
 
     <TextView
+        android:id="@+id/podcasts_activity_select_button"
+        style="@style/header_text_view"
+        android:text="Podcasts"
+        android:clickable="true"/>
+
+    <TextView
         android:id="@+id/settings_activity_select_button"
         style="@style/header_text_view"
         android:text="Settings"
