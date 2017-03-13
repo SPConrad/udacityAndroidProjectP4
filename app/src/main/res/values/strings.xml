@@ -1,22 +1,46 @@
 <resources>
     <string name="app_name">UdacityP4ProjectMusicPlayer</string>
-    <string name="song0">Song 1</string>
-    <string name="song1">Song 2</string>
-    <string name="song2">Song 3</string>
-    <string name="song3">Song 4</string>
-    <string name="song4">Song 5</string>
-    <string name="song5">Song 6</string>
-    <string name="song6">Song 7</string>
-    <string name="song7">Song 8</string>
-    <string name="song8">Song 9</string>
-    <string name="song9">Song 10</string>
-    <string name="song10">Song 11</string>
-    <string name="song11">Song 12</string>
-    <string name="song12">Song 13</string>
-    <string name="song13">Song 14</string>
-    <string name="song14">Song 15</string>
-    <string name="song15">Song 16</string>
-    <string name="song16">Song 17</string>
-    <string name="song17">Song 18</string>
-    <string name="song18">Song 19</string>
+    <string name="song0">All in a Decade\'s Work</string>
+    <string name="song1">The Long Construction</string>
+    <string name="song2">Population - 1</string>
+    <string name="song3">Prelude to War</string>
+    <string name="song4">Attack on the Colony</string>
+    <string name="song5">Roslin and Adama</string>
+    <string name="song6">The Winds of Winter</string>
+    <string name="song7">The Light of the Seven</string>
+    <string name="song8">Enterprising Young Men</string>
+    <string name="song9">Logo and Prosper</string>
+    <string name="song10">Night on the Yorktown</string>
+    <string name="song11">A Lesson in Vulcan Mineralogy</string>
+    <string name="song12">The A400</string>
+    <string name="song13">A Calculated Infiltration</string>
+    <string name="song14">It\'s All Been Done</string>
+    <string name="song15">Brian Wilson</string>
+    <string name="song16">Come With Me Now</string>
+    <string name="song17">Shut Up and Dance</string>
+    <string name="song18">CLU</string>
+    <string name="song19">Son of Flynn</string>
+
+    <string name="artist0">Chris Tilton</string>
+    <string name="artist1">Bear McCreary</string>
+    <string name="artist2">Ramin Djawadi</string>
+    <string name="artist3">Michael Giacchino</string>
+    <string name="artist4">Henry Jackman</string>
+    <string name="artist5">Barenaked Ladies</string>
+    <string name="artist6">Kongos</string>
+    <string name="artist7">Walk the Moon</string>
+    <string name="artist8">Daft Punk</string>
+
+
+
+    <string name="podcast0">Giant Bombcast</string>
+    <string name="podcast1">Welcome to Nightvale</string>
+    <string name="podcast2">Wait Wait Don\'t Tell Me</string>
+    <string name="podcast3">Savage Lovecast</string>
+    <string name="podcast4">Pop Culture Happy Hour</string>
+    <string name="podcast5">Wolf 359</string>
+    <string name="podcast6">99% Invisible</string>
+    <string name="podcast7">Hardcore History</string>
+    <string name="podcast8">Giant Beastcast</string>
+    <string name="podcast9">The Nerdist</string>
 </resources>
