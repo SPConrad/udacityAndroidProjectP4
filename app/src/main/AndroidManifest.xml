@@ -25,6 +25,16 @@
             android:label="Podcasts"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity
+            android:name=".PlaylistsActivity"
+            android:label="Playlists"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
+            android:name=".PlayAudioActivity"
+            android:label="Now Playing"
+            android:parentActivityName=".MainActivity">
+        </activity>
     </application>
 
 </manifest>

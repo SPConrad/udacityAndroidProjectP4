@@ -1,6 +1,7 @@
 package com.example.spconrad.udacityp4projectmusicplayer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import static com.example.spconrad.udacityp4projectmusicplayer.R.layout.song_lis
 
 public class SongListActivity extends AppCompatActivity {
     private String[] songArray = new String[20];
+    private String[] artistArray = new String[20];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public class SongListActivity extends AppCompatActivity {
 
         for (int i = 0; i < 20; i++){
             songArray[i] = "song" + i;
+            artistArray[i] = "artist" + i;
         };
 
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -34,17 +37,33 @@ public class SongListActivity extends AppCompatActivity {
 
             View custom = inflater.inflate(R.layout.song_tile_template, null);
 
-            String identifier = getPackageName() + ":string/" + songArray[i];
+            final String songIdentifier = getPackageName() + ":string/" + songArray[i];
+            String artistIdentifier = getPackageName() + ":string/" + artistArray[i];
 
-            int songTitleText = getResources().getIdentifier(identifier, null, null);
+            int songTitleText = getResources().getIdentifier(songIdentifier, null, null);
+            int artistText = getResources().getIdentifier(artistIdentifier, null, null);
 
             TextView songTitle = (TextView) custom.findViewById(R.id.song_title_textview);
             TextView songArtist = (TextView) custom.findViewById(R.id.song_artist_textview);
             TextView songDuration = (TextView) custom.findViewById(R.id.song_duration_textview);
 
             songTitle.setText(getString(songTitleText));
-            songArtist.setText("I\'m from Iowa!");
+            songArtist.setText(getString(artistText));
             songDuration.setText("1:17");
+
+            final String[] songInformation ={ getString(songTitleText), getString(artistText), "1:17"};
+
+            custom.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    Intent playSongIntent = new Intent(SongListActivity.this, PlayAudioActivity.class);
+
+                    playSongIntent.putExtra("audioToPlay", songInformation);
+
+                    startActivity(playSongIntent);
+                    finish();
+                }
+            });
 
             songListLinearLayout.addView(custom);
         };

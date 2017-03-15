@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/art_area"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".30"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/song_art_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/kingsman"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/song_position_area"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".20"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/song_position_slider"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight=".5">
+
+            <TextView
+                android:id="@+id/current_time_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:text="0:15"/>
+
+            <TextView
+                android:id="@+id/song_length_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="3:14" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/controls_area"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".50"
+        android:orientation="vertical"
+        android:addStatesFromChildren="true"
+        android:gravity="top">
+
+        <LinearLayout
+            android:id="@+id/last_play_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="10">
+
+            <ImageView
+                android:id="@+id/previous_song_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/backward"/>
+
+            <ImageView
+                android:id="@+id/play_pause_button"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:scaleType="fitXY"
+                android:src="@drawable/play"/>
+
+            <ImageView
+                android:id="@+id/next_song_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="end"
+                android:scaleType="fitXY"
+                android:src="@drawable/forward" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/volume_slider_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight=".5"
+            android:gravity="bottom">
+
+            <ImageView
+                android:id="@+id/mute_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:src="@drawable/mute"/>
+
+            <ProgressBar
+                android:id="@+id/volume_slider"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:layout_gravity="center"
+                style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"/>
+
+            <ImageView
+                android:id="@+id/max_volume_image"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:src="@drawable/unmute"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
