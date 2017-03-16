@@ -18,10 +18,25 @@ public class MainActivity extends AppCompatActivity {
 
         TextView podcastsTextView = (TextView) findViewById(R.id.podcasts_activity_select_button);
 
+        TextView playRandomSong = (TextView) findViewById(R.id.play_random_song_button);
+
+
+        playRandomSong.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent songsActivityIntent = new Intent(MainActivity.this, PlayAudioActivity.class);
+                final String[] songInformation = {"main", "This is a random song", "Random Arist", "3:15"};
+                songsActivityIntent.putExtra("audioToPlay", songInformation);
+                startActivity(songsActivityIntent);
+                //finish();
+            }
+        });
+
         songsTextView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent songsActivityIntent = new Intent(MainActivity.this, SongListActivity.class);
+                Intent songsActivityIntent = new Intent(MainActivity.this, AudioListActivity.class);
+                songsActivityIntent.putExtra("audioType", "song");
 
                 startActivity(songsActivityIntent);
                 //finish();
@@ -31,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
         podcastsTextView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent podcastsActivityIntent = new Intent(MainActivity.this, PodcastsActivity.class);
+                Intent podcastsActivityIntent = new Intent(MainActivity.this, AudioListActivity.class);
+                podcastsActivityIntent.putExtra("audioType", "podcast");
 
                 startActivity(podcastsActivityIntent);
                 //finish();

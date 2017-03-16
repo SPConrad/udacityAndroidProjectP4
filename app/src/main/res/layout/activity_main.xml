@@ -12,6 +12,12 @@
     tools:context="com.example.spconrad.udacityp4projectmusicplayer.MainActivity">
 
     <TextView
+        android:id="@+id/play_random_song_button"
+        style="@style/header_text_view"
+        android:text="Play Random Song"
+        android:clickable="true"/>
+
+    <TextView
         android:id="@+id/songs_activity_select_button"
         style="@style/header_text_view"
         android:text="Songs"

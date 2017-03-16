@@ -19,7 +19,6 @@ public class PodcastsActivity extends AppCompatActivity {
     private String[] podcastArray = new String[10];
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,10 +26,10 @@ public class PodcastsActivity extends AppCompatActivity {
 
 
 
+
         for (int i = 0; i < 10; i++) {
             podcastArray[i] = "podcast" + i;
-        }
-        ;
+        };
 
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -52,7 +51,7 @@ public class PodcastsActivity extends AppCompatActivity {
             songArtist.setText("I\'m from Iowa!");
             songDuration.setText("1:17");
 
-            final String[] podcastInformation ={ getString(podcastTitleText), "Podcast", "1:17"};
+            final String[] podcastInformation ={ "podcasts", getString(podcastTitleText), "Podcast", "1:17"};
 
 
             custom.setOnClickListener(new View.OnClickListener(){
