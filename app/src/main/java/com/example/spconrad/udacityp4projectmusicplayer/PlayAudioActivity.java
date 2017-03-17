@@ -24,7 +24,7 @@ public class PlayAudioActivity extends AppCompatActivity{
                 finish();
                 return true;
             case "podcasts":
-                startActivity(new Intent(this, PodcastsActivity.class));
+                startActivity(new Intent(this, AudioListActivity.class));
                 //goBack = new Intent(PlayAudioActivity.this, AudioListActivity.class);
                 //startActivity(goBack);
                 finish();

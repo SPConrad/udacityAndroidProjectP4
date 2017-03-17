@@ -17,17 +17,22 @@ import static com.example.spconrad.udacityp4projectmusicplayer.R.layout.song_lis
 
 public class AudioListActivity extends AppCompatActivity {
 
+    int numberOfSongs = 20;
+    int numberOfPodcasts = 10;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(song_list);
 
         String audioType = getIntent().getStringExtra("audioType");
+
         int numberOfItems = 0;
-        if (audioType.equals("song")){
-            numberOfItems = 20;
-        } else if (audioType.equals("podcast")){
-            numberOfItems = 10;
+
+        if (audioType.equals("song")) {
+            numberOfItems = numberOfSongs;
+        } else if (audioType.equals("podcast")) {
+            numberOfItems = numberOfPodcasts;
         }
 
         getSupportActionBar().setTitle(audioType);
@@ -39,6 +44,11 @@ public class AudioListActivity extends AppCompatActivity {
         ///Point inflater at my the container layout
         LinearLayout songListLinearLayout = (LinearLayout) findViewById(R.id.song_list_linear_layout);
 
+        String audioTitleText;
+        String artistText = "Placeholder Aritst";
+        String songDurationText = "3:21";
+        String packageName = getPackageName();
+
         for (int i = 0; i < numberOfItems; i++) {
             ///create a new view using the XML template for song/podcast listings
             View custom = inflater.inflate(R.layout.song_tile_template, null);
@@ -49,14 +59,13 @@ public class AudioListActivity extends AppCompatActivity {
             int audioTitleTextId;
             int artistTextId;
 
-            String audioTitleText;
-            String artistText = "Placeholder Aritst";
-            String songDurationText = "3:21";
+            audioTitleText = "@string/defaultSongTitle";
+            artistText = "@string/defaultSongArtist";
 
-            audioTitleIdentifier = getPackageName() + ":string/" + audioType + i;
+            audioTitleIdentifier = packageName + ":string/" + audioType + i;
 
             if (audioType.equals("song")) {
-                artistIdentifier = getPackageName() + ":string/" + "artist" + i;
+                artistIdentifier = getPackageName() + ":string/artist" + i;
                 artistTextId = getResources().getIdentifier(artistIdentifier, null, null);
                 artistText = getString(artistTextId);
             }
@@ -77,12 +86,12 @@ public class AudioListActivity extends AppCompatActivity {
             songDuration.setText(songDurationText);
 
             ///create a string array from that textview to send along to the "Now Playing" activity
-            final String[] audioInformation ={ "songs", audioTitleText, artistText, songDurationText };
+            final String[] audioInformation = {"songs", audioTitleText, artistText, songDurationText};
 
             ///create a click listener for each listing
-            custom.setOnClickListener(new View.OnClickListener(){
+            custom.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v){
+                public void onClick(View v) {
                     Intent playSongIntent = new Intent(AudioListActivity.this, PlayAudioActivity.class);
                     ///add in the song information
                     playSongIntent.putExtra("audioToPlay", audioInformation);
@@ -93,10 +102,8 @@ public class AudioListActivity extends AppCompatActivity {
             });
 
             songListLinearLayout.addView(custom);
-        };
-
-
-
+        }
+        ;
 
 
     }

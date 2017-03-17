@@ -14,31 +14,25 @@
     <TextView
         android:id="@+id/play_random_song_button"
         style="@style/header_text_view"
-        android:text="Play Random Song"
-        android:clickable="true"/>
+        android:clickable="true"
+        android:text="Play Random Song" />
 
     <TextView
         android:id="@+id/songs_activity_select_button"
         style="@style/header_text_view"
-        android:text="Songs"
-        android:clickable="true"/>
-
-    <TextView
-        android:id="@+id/playlists_activity_select_button"
-        style="@style/header_text_view"
-        android:text="Playlists"
-        android:clickable="true"/>
+        android:clickable="true"
+        android:text="Songs" />
 
     <TextView
         android:id="@+id/podcasts_activity_select_button"
         style="@style/header_text_view"
-        android:text="Podcasts"
-        android:clickable="true"/>
+        android:clickable="true"
+        android:text="Podcasts" />
 
     <TextView
         android:id="@+id/settings_activity_select_button"
         style="@style/header_text_view"
-        android:text="Settings"
-        android:clickable="true"/>
+        android:clickable="true"
+        android:text="Settings" />
 
 </LinearLayout>

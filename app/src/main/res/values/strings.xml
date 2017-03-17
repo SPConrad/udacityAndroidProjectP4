@@ -1,5 +1,15 @@
 <resources>
     <string name="app_name">UdacityP4ProjectMusicPlayer</string>
+
+    <string name="settingsOption0state0">Show song time remaining</string>
+    <string name="settingsOption0state1">Show total song time</string>
+
+    <string name="settingsOption1state0">Hide song rating</string>
+    <string name="settingsOption1state1">Show song rating</string>
+
+    <string name="defaultSongTitle">No Title</string>
+    <string name="defaultSongArtist">No Artist</string>
+
     <string name="song0">All in a Decade\'s Work</string>
     <string name="song1">The Long Construction</string>
     <string name="song2">Population - 1</string>
@@ -41,7 +51,6 @@
     <string name="artist17">Walk the Moon</string>
     <string name="artist18">Daft Punk</string>
     <string name="artist19">Daft Punk</string>
-
 
 
     <string name="podcast0">Giant Bombcast</string>

@@ -20,37 +20,44 @@ public class MainActivity extends AppCompatActivity {
 
         TextView playRandomSong = (TextView) findViewById(R.id.play_random_song_button);
 
+        TextView settings = (TextView) findViewById(R.id.settings_activity_select_button);
 
-        playRandomSong.setOnClickListener(new View.OnClickListener(){
+        playRandomSong.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 Intent songsActivityIntent = new Intent(MainActivity.this, PlayAudioActivity.class);
                 final String[] songInformation = {"main", "This is a random song", "Random Arist", "3:15"};
                 songsActivityIntent.putExtra("audioToPlay", songInformation);
                 startActivity(songsActivityIntent);
-                //finish();
             }
         });
 
-        songsTextView.setOnClickListener(new View.OnClickListener(){
+        songsTextView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 Intent songsActivityIntent = new Intent(MainActivity.this, AudioListActivity.class);
                 songsActivityIntent.putExtra("audioType", "song");
 
                 startActivity(songsActivityIntent);
-                //finish();
             }
         });
 
-        podcastsTextView.setOnClickListener(new View.OnClickListener(){
+        podcastsTextView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 Intent podcastsActivityIntent = new Intent(MainActivity.this, AudioListActivity.class);
                 podcastsActivityIntent.putExtra("audioType", "podcast");
 
                 startActivity(podcastsActivityIntent);
-                //finish();
+            }
+        });
+
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent settingsActivityIntent = new Intent(MainActivity.this, SettingsActivity.class);
+
+                startActivity(settingsActivityIntent);
             }
         });
     }

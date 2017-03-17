@@ -1,13 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="settings back"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"/>
+    <LinearLayout
+        style="@style/settings_page_item_linear_layout"
+        android:paddingRight="8dp"
+        android:paddingLeft="8dp">
+
+        <TextView
+            android:id="@+id/settings_textView_option_0_state_0"
+            style="@style/settings_page_item_not_selected"
+            android:text="@string/settingsOption0state0" />
+
+        <Switch
+            style="@style/settings_page_switch"
+            android:id="@+id/time_display_switch"
+            android:checked="true" />
+
+        <TextView
+            android:id="@+id/settings_textView_option_0_state_1"
+            style="@style/settings_page_item_selected"
+            android:text="@string/settingsOption0state1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/settings_page_item_linear_layout">
+
+        <TextView
+            style="@style/settings_page_item_not_selected"
+            android:id="@+id/settings_textView_option_1_state_0"
+            android:text="@string/settingsOption1state0" />
+
+        <Switch
+            style="@style/settings_page_switch"
+            android:id="@+id/show_rating_switch"
+            android:checked="true" />
+
+        <TextView
+            android:id="@+id/settings_textView_option_1_state_1"
+            style="@style/settings_page_item_selected"
+            android:text="@string/settingsOption1state1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/settings_page_item_linear_layout"
+        android:gravity="center_vertical">
+
+        <Switch
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:thumbTextPadding="3dp"
+            android:showText="true"
+            android:text="Song Time Displayed"
+            android:textOn="Time Remaining"
+            android:textOff="Total Time"
+            android:switchPadding="@android:dimen/app_icon_size"
+            android:checked="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:textSize="14sp"
+            android:switchMinWidth="100dp" />
+
+    </LinearLayout>
 
 </LinearLayout>
