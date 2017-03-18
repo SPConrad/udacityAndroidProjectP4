@@ -42,18 +42,14 @@
             android:orientation="horizontal">
 
             <TextView
+                style="@style/play_audio_page_audio_length_text_view"
                 android:id="@+id/current_time_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:gravity="start"
                 android:text="0:15" />
 
             <TextView
+                style="@style/play_audio_page_audio_length_text_view"
                 android:id="@+id/song_length_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:gravity="end"
                 android:text="3:14" />
         </LinearLayout>
