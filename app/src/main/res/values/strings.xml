@@ -63,4 +63,14 @@
     <string name="podcast7">Hardcore History</string>
     <string name="podcast8">Giant Beastcast</string>
     <string name="podcast9">The Nerdist</string>
+    <string name="hide">Hide</string>
+    <string name="show">Show</string>
+    <string name="remaining">Remaining</string>
+    <string name="total">Total</string>
+    <string name="unmute">Unmute</string>
+    <string name="album_cover">Album Cover</string>
+    <string name="previous_song">Previous Song</string>
+    <string name="play_pause_button">Play Pause Button</string>
+    <string name="next_song">Next Song</string>
+    <string name="mute">Mute</string>
 </resources>

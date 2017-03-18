@@ -5,8 +5,8 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import static com.example.spconrad.udacityp4projectmusicplayer.R.layout.activity_settings;
 
@@ -16,18 +16,20 @@ import static com.example.spconrad.udacityp4projectmusicplayer.R.layout.activity
 
 public class SettingsActivity extends AppCompatActivity {
 
-    Switch timeDisplaySwitch;
+    ///create variables for the toggle buttons
+    ToggleButton timeDisplayToggle;
+    ToggleButton ratingDisplayToggle;
 
-    Switch ratingDisplaySwitch;
-
-    boolean showTotalSongTime = true;
-    boolean showSongRating = true;
-
+    ///keep track of how many settings items there are
     int numberOfSettingsItems = 2;
 
+    ///each one currently has two textviews associated. This would
+    ///likely be different with more complex options
     TextView[] settingsTextViews = new TextView[numberOfSettingsItems * 2];
 
+    ///just keep track of the package name so you don't go searching for it every time you use it
     String packageName;
+    ///declare a temp String and int here so new resources doesn't need to be created every time a loop is run
     String tempItemResoureLocation = "";
     int tempItemResourceId = 0;
 
@@ -36,28 +38,32 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(activity_settings);
 
+        ///assign the packagename
         packageName = getPackageName();
 
         for (int i = 0; i < numberOfSettingsItems * 2; i++) {
+            ///assign the textviews
             tempItemResoureLocation = "settings_textView_option_" + ((i - (i % 2)) / 2) + "_state_" + i % 2;
             tempItemResourceId = getResources().getIdentifier(tempItemResoureLocation, "id", packageName);
             settingsTextViews[i] = (TextView) findViewById(tempItemResourceId);
         }
 
-        timeDisplaySwitch = (Switch) findViewById(R.id.time_display_switch);
-        ratingDisplaySwitch = (Switch) findViewById(R.id.show_rating_switch);
+        ///assign the togglebuttons
+        timeDisplayToggle = (ToggleButton) findViewById(R.id.time_display_switch);
+        ratingDisplayToggle = (ToggleButton) findViewById(R.id.show_rating_switch);
 
-        timeDisplaySwitch.setOnClickListener(new View.OnClickListener() {
+        //assign listeners for the togglebuttons
+        timeDisplayToggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            changeSelection(0, timeDisplaySwitch.isChecked());
+                changeSelection(0, timeDisplayToggle.isChecked());
             }
         });
 
-        ratingDisplaySwitch.setOnClickListener(new View.OnClickListener() {
+        ratingDisplayToggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeSelection(1, ratingDisplaySwitch.isChecked());
+                changeSelection(1, ratingDisplayToggle.isChecked());
             }
         });
     }
@@ -75,13 +81,16 @@ public class SettingsActivity extends AppCompatActivity {
         ///currentState represents the *current* state, by the time this function is reached it
         ///represents the new state, not the state it was in when the user hit the button
         if (!currentState) {
-            toEnable = type + 0;
+            toEnable = type;
             toDisable = type + 1;
         } else {
             toEnable = type + 1;
-            toDisable = type + 0;
+            toDisable = type;
         }
 
+        ///and make the texts change to represent their state.
+        ///currently cannot programmatically change a View's style reference
+        ///so I have to manually change each element
         settingsTextViews[toEnable].setTypeface(Typeface.DEFAULT_BOLD);
         settingsTextViews[toEnable].setTextColor(Color.BLACK);
 

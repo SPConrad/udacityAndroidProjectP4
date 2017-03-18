@@ -16,7 +16,7 @@ import static com.example.spconrad.udacityp4projectmusicplayer.R.layout.song_lis
  */
 
 public class AudioListActivity extends AppCompatActivity {
-
+    ///hard coded number of items
     int numberOfSongs = 20;
     int numberOfPodcasts = 10;
 
@@ -25,16 +25,18 @@ public class AudioListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(song_list);
 
+        ///songs or podcasts?
         String audioType = getIntent().getStringExtra("audioType");
 
         int numberOfItems = 0;
-
+        ///assign number of items based on audio type
         if (audioType.equals("song")) {
             numberOfItems = numberOfSongs;
         } else if (audioType.equals("podcast")) {
             numberOfItems = numberOfPodcasts;
         }
 
+        ///change the title bar to represent the type of audio
         getSupportActionBar().setTitle(audioType);
 
 
@@ -44,6 +46,7 @@ public class AudioListActivity extends AppCompatActivity {
         ///Point inflater at my the container layout
         LinearLayout songListLinearLayout = (LinearLayout) findViewById(R.id.song_list_linear_layout);
 
+        ///declare variables outside of loop so new resources are not created every time the loop is run
         String audioTitleText;
         String artistText = "Placeholder Aritst";
         String songDurationText = "3:21";
@@ -65,6 +68,7 @@ public class AudioListActivity extends AppCompatActivity {
             audioTitleIdentifier = packageName + ":string/" + audioType + i;
 
             if (audioType.equals("song")) {
+                ///only songs have unique artists
                 artistIdentifier = getPackageName() + ":string/artist" + i;
                 artistTextId = getResources().getIdentifier(artistIdentifier, null, null);
                 artistText = getString(artistTextId);
@@ -86,7 +90,7 @@ public class AudioListActivity extends AppCompatActivity {
             songDuration.setText(songDurationText);
 
             ///create a string array from that textview to send along to the "Now Playing" activity
-            final String[] audioInformation = {"songs", audioTitleText, artistText, songDurationText};
+            final String[] audioInformation = {audioType, audioTitleText, artistText, songDurationText};
 
             ///create a click listener for each listing
             custom.setOnClickListener(new View.OnClickListener() {
@@ -100,13 +104,7 @@ public class AudioListActivity extends AppCompatActivity {
                     finish();
                 }
             });
-
             songListLinearLayout.addView(custom);
-        }
-        ;
-
-
+        };
     }
-
-
 }

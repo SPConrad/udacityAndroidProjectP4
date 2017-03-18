@@ -8,18 +8,20 @@
 
     <LinearLayout
         style="@style/settings_page_item_linear_layout"
-        android:paddingRight="8dp"
-        android:paddingLeft="8dp">
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
 
         <TextView
             android:id="@+id/settings_textView_option_0_state_0"
             style="@style/settings_page_item_not_selected"
             android:text="@string/settingsOption0state0" />
 
-        <Switch
-            style="@style/settings_page_switch"
+        <ToggleButton
             android:id="@+id/time_display_switch"
-            android:checked="true" />
+            style="@style/settings_page_switch"
+            android:checked="true"
+            android:textOff="@string/remaining"
+            android:textOn="@string/total" />
 
         <TextView
             android:id="@+id/settings_textView_option_0_state_1"
@@ -28,45 +30,24 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        style="@style/settings_page_item_linear_layout">
+    <LinearLayout style="@style/settings_page_item_linear_layout">
 
         <TextView
-            style="@style/settings_page_item_not_selected"
             android:id="@+id/settings_textView_option_1_state_0"
+            style="@style/settings_page_item_not_selected"
             android:text="@string/settingsOption1state0" />
 
-        <Switch
-            style="@style/settings_page_switch"
+        <ToggleButton
             android:id="@+id/show_rating_switch"
-            android:checked="true" />
+            style="@style/settings_page_switch"
+            android:checked="true"
+            android:textOff="@string/hide"
+            android:textOn="@string/show" />
 
         <TextView
             android:id="@+id/settings_textView_option_1_state_1"
             style="@style/settings_page_item_selected"
             android:text="@string/settingsOption1state1" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        style="@style/settings_page_item_linear_layout"
-        android:gravity="center_vertical">
-
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:thumbTextPadding="3dp"
-            android:showText="true"
-            android:text="Song Time Displayed"
-            android:textOn="Time Remaining"
-            android:textOff="Total Time"
-            android:switchPadding="@android:dimen/app_icon_size"
-            android:checked="true"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:gravity="center_vertical|center_horizontal"
-            android:textSize="14sp"
-            android:switchMinWidth="100dp" />
 
     </LinearLayout>
 

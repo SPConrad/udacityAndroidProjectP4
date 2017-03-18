@@ -9,23 +9,31 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
 
+    private TextView songsTextView;
+    private TextView podcastsTextView;
+    private TextView playRandomSong;
+    private TextView settings;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView songsTextView = (TextView) findViewById(R.id.songs_activity_select_button);
+        ///assign textviews for each Activity
+        songsTextView = (TextView) findViewById(R.id.songs_activity_select_button);
 
-        TextView podcastsTextView = (TextView) findViewById(R.id.podcasts_activity_select_button);
+        podcastsTextView = (TextView) findViewById(R.id.podcasts_activity_select_button);
 
-        TextView playRandomSong = (TextView) findViewById(R.id.play_random_song_button);
+        playRandomSong = (TextView) findViewById(R.id.play_random_song_button);
 
-        TextView settings = (TextView) findViewById(R.id.settings_activity_select_button);
+        settings = (TextView) findViewById(R.id.settings_activity_select_button);
 
+        ///assign clickListeners for each textview
         playRandomSong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent songsActivityIntent = new Intent(MainActivity.this, PlayAudioActivity.class);
+                ///send along some placeholder song info
                 final String[] songInformation = {"main", "This is a random song", "Random Arist", "3:15"};
                 songsActivityIntent.putExtra("audioToPlay", songInformation);
                 startActivity(songsActivityIntent);
@@ -36,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent songsActivityIntent = new Intent(MainActivity.this, AudioListActivity.class);
+                ///tell the audio listing page what kind of audio we are looking at
                 songsActivityIntent.putExtra("audioType", "song");
 
                 startActivity(songsActivityIntent);
@@ -46,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent podcastsActivityIntent = new Intent(MainActivity.this, AudioListActivity.class);
+                ///tell the audio listing page what kind of audio we are looking at
                 podcastsActivityIntent.putExtra("audioType", "podcast");
 
                 startActivity(podcastsActivityIntent);

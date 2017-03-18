@@ -8,15 +8,16 @@
         android:id="@+id/art_area"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".30"
+        android:layout_weight=".40"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/song_art_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:contentDescription="@string/album_cover"
             android:scaleType="fitCenter"
-            android:src="@drawable/kingsman"/>
+            android:src="@drawable/kingsman" />
 
     </LinearLayout>
 
@@ -29,16 +30,16 @@
 
         <ProgressBar
             android:id="@+id/song_position_slider"
+            style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
-            style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"/>
+            android:layout_weight="2" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight=".5">
+            android:layout_weight=".5"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/current_time_text"
@@ -46,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="start"
-                android:text="0:15"/>
+                android:text="0:15" />
 
             <TextView
                 android:id="@+id/song_length_text"
@@ -63,17 +64,17 @@
         android:id="@+id/controls_area"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".50"
-        android:orientation="vertical"
+        android:layout_weight=".40"
         android:addStatesFromChildren="true"
-        android:gravity="top">
+        android:gravity="top"
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/last_play_next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="10">
+            android:layout_weight="10"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/previous_song_button"
@@ -81,8 +82,9 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="start"
                 android:layout_weight="1"
+                android:contentDescription="@string/previous_song"
                 android:scaleType="fitXY"
-                android:src="@drawable/backward"/>
+                android:src="@drawable/backward" />
 
             <ImageView
                 android:id="@+id/play_pause_button"
@@ -90,15 +92,17 @@
                 android:layout_height="fill_parent"
                 android:layout_gravity="center"
                 android:layout_weight="2"
+                android:contentDescription="@string/play_pause_button"
                 android:scaleType="fitXY"
-                android:src="@drawable/play"/>
+                android:src="@drawable/play" />
 
             <ImageView
                 android:id="@+id/next_song_button"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_gravity="end"
+                android:layout_weight="1"
+                android:contentDescription="@string/next_song"
                 android:scaleType="fitXY"
                 android:src="@drawable/forward" />
         </LinearLayout>
@@ -107,33 +111,35 @@
             android:id="@+id/volume_slider_area"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_weight=".5"
-            android:gravity="bottom">
+            android:gravity="bottom"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/mute_button"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_gravity="center"
-                android:src="@drawable/mute"/>
+                android:layout_weight="1"
+                android:contentDescription="@string/mute"
+                android:src="@drawable/mute" />
 
             <ProgressBar
                 android:id="@+id/volume_slider"
+                style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="8"
                 android:layout_gravity="center"
-                style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"/>
+                android:layout_weight="8" />
 
             <ImageView
                 android:id="@+id/max_volume_image"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_gravity="center"
-                android:src="@drawable/unmute"/>
+                android:layout_weight="1"
+                android:contentDescription="@string/unmute"
+                android:src="@drawable/unmute" />
 
         </LinearLayout>
 

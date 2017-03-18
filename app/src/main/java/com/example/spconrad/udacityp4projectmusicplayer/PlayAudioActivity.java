@@ -17,22 +17,17 @@ public class PlayAudioActivity extends AppCompatActivity{
 
         switch (returnToScreen) {
             // Respond to the action bar's Up/Home button
-            case "songs":
-                startActivity(new Intent(this, AudioListActivity.class));
-                //goBack = new Intent(PlayAudioActivity.this, AudioListActivity.class);
-                //startActivity(goBack);
+            ///return to the appropriate list screen, or the main screen if it was a random song
+            case "song":
+                startActivity(new Intent(this, AudioListActivity.class).putExtra("audioType", "song"));
                 finish();
                 return true;
-            case "podcasts":
-                startActivity(new Intent(this, AudioListActivity.class));
-                //goBack = new Intent(PlayAudioActivity.this, AudioListActivity.class);
-                //startActivity(goBack);
+            case "podcast":
+                startActivity(new Intent(this, AudioListActivity.class).putExtra("audioType", "podcast"));
                 finish();
                 return true;
             case "main":
                 startActivity(new Intent(this, MainActivity.class));
-                //goBack = new Intent(PlayAudioActivity.this, AudioListActivity.class);
-                //startActivity(goBack);
                 finish();
                 return true;
         }
@@ -44,7 +39,7 @@ public class PlayAudioActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_play_audio);
-
+        ///grab what the last screen was from passed in information
         String[] audioInformation = getIntent().getStringArrayExtra("audioToPlay");
         returnToScreen = audioInformation[0];
 
