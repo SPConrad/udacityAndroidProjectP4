@@ -4,10 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
+
     <LinearLayout
         android:id="@+id/song_list_linear_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical"><TextView
+        style="@style/identifier_text_view"
+        android:text="THIS PAGE LISTS SONGS OR PODCASTS"/></LinearLayout>
 
 </ScrollView>

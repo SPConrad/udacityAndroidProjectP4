@@ -8,6 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="identifier_text_view">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
     <style name="header_text_view">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>

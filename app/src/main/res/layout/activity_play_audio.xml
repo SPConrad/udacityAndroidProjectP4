@@ -4,6 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        style="@style/identifier_text_view"
+        android:text="THIS IS WHERE YOU PLAY AUDIO"/>
+
     <LinearLayout
         android:id="@+id/art_area"
         android:layout_width="match_parent"
